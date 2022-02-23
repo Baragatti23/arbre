@@ -1,0 +1,249 @@
+.Checkout{
+    width: 97%;
+    max-width: 700px;
+    margin: 60px auto;
+}
+.All{
+    position: relative;
+}
+
+.All::before,.All::after{
+    content: "";
+    width: 100%;
+    height: 355px;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+}
+.All::after{
+    bottom: -60px;
+    height: 250px;
+    background-color: rgba(253, 250, 250, 0.5);
+}
+.All::before{
+    top: -60px;
+    background-color: rgb(235, 243, 252,.25);
+}
+.Checkout--steper{
+    display: flex;
+    width: 100%;
+}
+.Checkout--steper--item{
+    width: 33.3333%;
+    display: flex;
+}
+.Checkout--steper--item div{
+    display: inline-block;
+    text-align: center;
+}
+.Checkout--steper--item:nth-child(2){
+    justify-content: center;
+}
+.Checkout--steper--item:nth-child(3){
+    justify-content: flex-end;
+}
+.Checkout--steper--item:nth-child(1){
+    justify-content: flex-start;
+}
+
+.Checkout--steper--item b{
+    --size: 30px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(177, 179, 180);
+    background-color: #FFF;
+    border: 2px solid rgb(201, 199, 199);
+}
+.Checkout--steper--item._active_ b{
+    background-color: var(--color);
+    --color:#111;
+    color: #fff;
+    border-color: var(--color);
+}
+.Checkout--steper--item p{
+    font-size: 1em;
+    color: rgb(177, 179, 180);
+    /* text-transform: uppercase; */
+    font-weight: bold;
+    margin-top: 16px;
+}
+.Checkout--steper--item._active_ p{
+    color: #111;
+    font-weight: bold;
+}
+.Checkout--content{
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+.Checkout--content h1{
+    text-align: center;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+.Checkout--content>p{
+    font-size: 1.1em;
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    line-height: 1.4em;
+    margin-top: 8px;
+    color: rgb(177, 179, 180);
+}
+.Checkout--content--baner{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+    box-shadow: 4px 10px 10px rgba(0,0,0,.15);
+    font-weight: bold;
+    color: rgba(255,255,255,.8);
+    text-transform: uppercase;
+    border-radius: 8px;
+    background-color: rgb(254, 98, 99);
+    background-color: rgb(156, 17, 236);
+    margin-top: 40px;
+}
+.Checkout--content--form{
+    margin-top: 40px;
+}
+.Checkout--content--form>p{
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.Checkout--content--inputGroup{
+    position: relative;
+    margin-bottom: 25px;
+}
+.Checkout--content--inputGroup._flex_{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 0 25px;
+}
+.Checkout--content--inputGroup label{
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    display: block;
+}
+.Checkout--content--inputGroup input,
+.Checkout--content--inputGroup textarea{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    padding: 0 15px;
+    align-items: center;
+    font-size: 1.1em;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: all .3s ease;
+    outline: none;
+}
+.Checkout--content--inputGroup input:hover,
+.Checkout--content--inputGroup textarea:hover{
+    border-color: rgb(242, 225, 252);
+}
+.Checkout--content--inputGroup input:focus,
+.Checkout--content--inputGroup textarea:focus{
+    border-color: rgb(228, 195, 248);
+}
+.Checkout--content--inputGroup textarea{
+    resize: none;
+    overflow: hidden;
+    height: 80px;
+    font-family: inherit;
+    padding: 15px;
+}
+.Checkout--content--radioGroup{
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    margin-top: 20px;
+}
+.Checkout--content--radioGroup label,
+._payNow_,._goBack_{
+    width: 200px;
+    height: 45px;
+    display: inline-flex;
+    margin-right: 15px;
+    background-color: #fff;
+    border: 2px solid #eee;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    color: rgb(168, 165, 170);
+    font-weight: bold;
+    transition: all .3s ease;
+}
+.Checkout--content--radioGroup input:checked + label,
+._payNow_{
+    background-color: rgb(255, 0, 106);
+    color: #fff;
+    box-shadow: 4px 10px 20px rgb(255, 0, 106,.25);
+    border-color: transparent;
+}
+.Checkout--content--form footer{
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #EEEE;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.Checkout--content--form footer div{
+    width: 100%;
+}
+.Checkout--content--form footer p{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 15px;
+    border-top: 1px solid rgba(0,0,0,.05);
+    padding-top: 15px;
+}
+.Checkout--content--form footer p:first-child{
+    margin-top: 0;
+    border-top: none;
+    padding-top: 0;
+}
+.Checkout--content--form footer span{
+    width: 50%;
+    color: #666;
+}
+.Checkout--content--form footer strong{
+    width: 50%;
+    text-align: right;
+}
+.Checkout--content--form footer strong._price_{
+    color: rgb(255, 0, 106);
+}
+.Checkout--content--btns{
+    margin-top: 35px;
+    text-align: right;
+}
+._payNow_{
+    margin-left: auto;
+    width: 250px;
+    color: #fff;
+    height: 48px;
+}
+._goBack_{
+    margin-right: 25px;
+    height: 48px;
+}
+._goBack_ svg,
+._payNow_ svg{
+    width: 1.3em;
+    margin-right: 10px;
+}

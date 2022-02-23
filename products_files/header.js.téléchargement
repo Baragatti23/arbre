@@ -1,0 +1,57 @@
+import {AJAX} from "./engine.js";
+import {SERVERURL} from "./engine.js";
+const btn_login_header=document.querySelector(".Header_btnLogin_");
+const login_modal=document.querySelector(".capModalLogin");
+if(btn_login_header!=null && btn_login_header!=null){
+    
+    btn_login_header.addEventListener("click",e=>{
+        e.preventDefault();
+        login_modal.classList.remove("_hide_");
+    });
+    login_modal.addEventListener("click",e=>{
+        if(e.target===login_modal) login_modal.classList.add("_hide_");
+    });
+}
+const btnSowMenuLeft=document.getElementById("Header--btnSowMenuLet");
+const menuLeft=document.querySelector(".Header--navigation");
+if(btnSowMenuLeft!=null){
+    btnSowMenuLeft.addEventListener("click",e=>{
+        e.preventDefault();
+        showHideMenuLeft();
+    });
+    if(menuLeft.classList.contains("_visible_")){
+        document.documentElement.style.setProperty("--navigation","clamp(260px,20%,320px)");
+    }else{
+        document.documentElement.style.setProperty("--navigation","0px");
+    }
+    function showHideMenuLeft(){
+        if(!menuLeft.classList.contains("_visible_")){
+            menuLeft.classList.add("_visible_");
+            document.documentElement.style.setProperty("--navigation","clamp(260px,20%,320px)");
+        }else{
+            menuLeft.classList.remove("_visible_");
+            document.documentElement.style.setProperty("--navigation","0px");
+        }
+    }
+}
+const btnLogout=document.getElementById("btnLogoutHeader");
+if(btnLogout!=null){
+    btnLogout.addEventListener("click",e=>{
+        e.preventDefault();
+        console.log("desconnectando");
+        AJAX(SERVERURL+"cogs_php/engine.php?function=signout").then(resolve=>{
+            setTimeout(() => {
+                console.log(resolve)
+                if(resolve!==""){
+                    const result=JSON.parse(resolve);
+                    console.log(result)
+                    if(result.status==1){
+                        location.href=result.path;
+                    }else{
+                        console.log("Ha ocurrido un error.\nVuelva a intentarlo por favor.")
+                    }
+                }
+            }, 1000);
+        });
+    });
+}

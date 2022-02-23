@@ -1,0 +1,604 @@
+.Histoires--home{
+    height: calc(100% - (var(--header) + var(--scrollAnimation)));
+    margin-bottom: 60px;
+    background-color: rgb(253,253,253);
+    /* border-bottom: 1px solid rgba(0,0,0,.05); */
+    box-shadow: 0 0 2px rgba(0,0,0,.05);
+}
+.Histoires--home ._wrapper_{
+    width: 100%;
+    max-width: 100%;
+}
+.Histoiries--home--container{
+    position: relative;
+    height: 100%;
+}
+.Histoiries--home-textHorizon{
+    font-size: 6.5em;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 0 2px #000;
+    text-transform: uppercase;
+    position: absolute;
+    /* color: rgb(238, 29, 109); */
+    right: 0px;
+    bottom: 10px;
+    transform-origin: left top;
+    /* transform: rotate(-90deg); */
+    display: none;
+}
+.Histoiries--home-roseBar{
+    width: 300px;
+    height: calc(100% + (var(--header) + var(--scrollAnimation)));
+    height: 100%;
+    position: absolute;
+    right: 15%;
+    top: calc(-1 * (var(--header) + var(--scrollAnimation)));
+    top: 0;
+    --bgsize: 12px;
+    --bgpoint: 13%;
+    --bgcolor: rgba(0,0,0,.11);
+    background-color: rgb(248, 209, 209,.5);
+    background-color: rgba(0,0,0,.01);
+    background-color: rgb(248, 209, 209,.35);
+    background-image: radial-gradient(var(--bgcolor) var(--bgpoint),transparent var(--bgpoint));
+    background-size: var(--bgsize) var(--bgsize);
+    /* border-radius: 60px 0 0 60px; */
+
+    /* display: none; */
+
+}
+.Histoiries--home-roseBar::before,
+.Histoiries--home-roseBar::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    
+    /* background-color: rgba(0,0,0,.1);
+    background-color: rgb(167, 30, 209,.2); */
+    /* background-color: rgb(0,0,0,.01); */
+    background-image: radial-gradient(var(--bgcolor) var(--bgpoint),transparent var(--bgpoint));
+    background-size: var(--bgsize) var(--bgsize);
+    
+    /* z-index: -1; */
+    display: none;
+}
+.Histoiries--home-roseBar::before{
+    left: 40px;
+    transform: translateX(-100%);
+    display: none;
+}
+.Histoiries--home-roseBar::after{
+    right: 0px;
+    transform: translateX(100%);
+}
+.Histoiries--home-netBar{
+    width: 60px;
+    --marge: 20px;
+    height: calc(100% -  (var(--marge) * 2));
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    /* border: 1px solid rgba(0,0,0,.2); */
+    box-shadow: 0 0 2px rgba(0,0,0,.2);
+    position: absolute;
+}
+.Histoiries--home-netBar ._menu_,
+.Histoiries--home-netBar ._networks_{
+    width: 70%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.Histoiries--home-netBar ._menu_{
+    top: 15px;
+}
+.Histoiries--home-netBar ._networks_{
+    bottom: 20px;
+}
+.Histoiries--home-netBar ._menu_ span{
+    height: 6px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,.5);
+    margin-bottom: 5px;
+    display: block;
+}
+.Histoiries--home-netBar ._networks_{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+.Histoiries--home-netBar ._networks_ li{
+    width: 100%;
+    margin-top: 20px;
+}
+.Histoiries--home-netBar ._networks_ a{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Histoiries--home-netBar ._networks_ svg{
+    width: 18px;
+}
+.Histoiries--home--content{
+    margin-left:  100px;
+    padding-top: 40px;
+    width: 40%;
+}
+.Histoiries--home--content h2{
+    font-size: 4em;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 35px;
+}
+.Histoiries--home--content h2::before{
+    content: "";
+    width: 100%;
+    height: 9px;
+    border-radius: 15px;
+    background-color: rgb(243, 230, 230);
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+.Histoiries--home--content h1{
+    font-size: 6em;
+    font-weight: bold;
+}
+.Histoiries--home--content p{
+    font-size: 1.5em;
+    margin-top: 20px;
+    line-height: 25px;
+    padding-left: 136px;
+    padding-right: 40px;
+    text-align: justify;
+}
+._explorerHist_{
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(0,0,0,.2);
+    color: #555;
+    font-weight: bold;
+    font-size: .62em;
+    border-radius: 60px 10px 10px 60px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    position: relative;
+}
+._explorerHist_ span{
+    position: absolute;
+    height: calc(100% + 4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    background: rgb(238, 29, 109);
+    border-radius: 50%;
+    right: 0; transform: translateX(50%);
+    top: -2px;
+}
+._explorerHist_ span svg{
+    color: #fff;
+    --size: 24px;
+    width: var(--size);
+    height: var(--size);
+}
+.Histoiries--home--baner{
+    width: 300px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background-color: rgba(222, 221, 253,.7);
+}
+.Histoiries--home--baner img{
+    background-blend-mode: overlay;
+    height: 100%;
+    filter: grayscale(.5);
+}
+
+/* A la une */
+.Histoires--une{
+    width: 700px;
+    margin: auto;
+    margin-bottom: 120px;
+}
+.Histoires--une h2{
+    font-size: 3em;
+    position: relative;
+}
+.Histoires--une h2::before{
+    content: "01";
+    background-color: salmon;
+    color: #fff;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 3px;
+    font-size: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+.Histoires--une--wrap{
+    display: flex;
+    --img: 50%;
+    margin-top: 20px;
+    position: relative;
+}
+.Histoires--une--wrap::before{
+    content: "";
+    width: 33.3333%;
+    display: flex;
+    aspect-ratio: 1.1;
+    --bgsize: 12px;
+    --bgpoint: 13%;
+    --bgcolor: rgba(0,0,0,.11);
+    background-color: rgb(248, 209, 209,.5);
+    background-color: rgba(0,0,0,.01);
+    background-image: radial-gradient(var(--bgcolor) var(--bgpoint),transparent var(--bgpoint));
+    background-size: var(--bgsize) var(--bgsize);
+    position: absolute;
+    right: 0;
+    top: 0;
+
+}
+.Histoires--une-img{
+    width: var(--img);
+    display: flex;
+    aspect-ratio: .7;
+    background-color: #EAEAEA;
+}
+.Histoires--une-titre{
+    width: calc(100% - var(--img));
+    --marge: 20px;
+    padding-left: var(--marge);
+    position: relative;
+}
+.Histoires--une-titre h3{
+    font-size: 4em;
+    position: relative;
+    top: 40px;
+    left: -70px;
+}
+.Histoires--une-titre_mois{
+    position: relative;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, rgb(254, 98, 99), rgb(246, 29, 108));
+    border-radius: 5px;
+    top: 5em;
+}
+.Histoires--une-titre_mois span{
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    display: inline-block;
+    padding: 5px 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-right: 0;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+.Histoires--une-titre_time{
+    width: 100px;
+    font-size: 3em;
+    color: #FFF;
+    flex-wrap: wrap;
+    padding: 12px;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    right: 40px;
+    transform: translateY(50%);
+    border-radius: 4px;
+    text-transform: uppercase;
+
+}
+.Histoires--une-titre_time i{
+    font-style: normal;
+    font-size: .8em;
+}
+.Histoires--une-titre_time span{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(255,255,255,.2);
+}
+.Histoires--une-titre::before{
+    content: "";
+    display: block;
+    width: 125%;
+    left: -25%;
+    /* left: var(--marge); */
+    height: 150px;
+    background: rgb(246, 29, 108);
+    border-radius: 3px;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(25%);
+}
+.Histoires--une--breve{
+    margin-top: 70px;
+    font-size: 1.3em;
+    padding-top: 30px;
+    line-height: 1.6em;
+    width: calc(100% - 140px);
+    border-top: 1px solid rgba(0,0,0,.05);
+    display: flex;
+    align-items: center;
+
+    font-size: 2.4em;
+    line-height: 1.25em;
+    text-align: center;
+}
+.Histoires--une--breve p::first-letter{
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 3px;
+    margin-right: 7px;
+    position: relative;
+    top: 5px;
+    float: left;
+}
+
+
+/* LE plus populaires */
+.Home--othersHistories{
+    margin-bottom: 60px;
+}
+.Home--othersHistories h2{
+    font-size: 3em;
+    text-transform: capitalize;
+    text-align: center;
+    position: relative;
+}
+.Home--othersHistories h2::before{
+    content: "";
+    width: 60px;
+    height: 4px;
+    border-radius: 3px;
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    transform: translateX(-50%);
+    background-color: #ee3573;
+}
+.Home--othersHistories--grid{
+    display: grid;
+    grid-gap: 30px;
+    gap: 30px;
+    grid-template-columns: repeat(3,1fr);
+    margin-top: 60px;
+}
+.Home--othersHistories--item{
+    background-color: #eaeaea;
+    display: flex;
+    aspect-ratio: 1/.85;
+    overflow: hidden;
+    position: relative;
+}
+.Home--othersHistories--item-time{
+    width: 60px;
+    position: absolute;
+    padding: 8px 12px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: .935em;
+    background-color: #fff;
+    top: 10px;
+    left: 10px;
+    border-radius: 2px;
+    box-shadow: 0 0 2px rgba(0,0,0,.11);
+}
+.Home--othersHistories--item img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.Home--othersHistories--item-over{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(107, 233, 250,.8);
+    background-color: rgb(246, 29, 108,.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+    opacity: 0;
+}
+.Home--othersHistories--item:hover .Home--othersHistories--item-over{
+    opacity: .6;
+}
+._btnVoir_{
+    padding: 0 22px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255,.1);
+    font-size: .875em;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+}
+.Home--othersHistories--item::before{
+    content: "";
+    width: 150%;
+    height: 150%;
+    box-shadow:inset 0 -30px 49px rgba(0,0,0,.9);
+    left: -50px;
+    /* transform: translateX(-50%); */
+    bottom: 0;
+    z-index: 1;
+    position: absolute;
+    display: block;
+}
+.Home--othersHistories--item-time span{
+    margin-bottom: 6px;
+    font-size: 1.35em;
+    padding-bottom: 3px;
+    border-bottom: 2px solid rgba(0,0,0,.05);
+    display: block;
+    width: 100%;
+}
+.Home--othersHistories--item-foot{
+    width: 100%;
+    padding: 12px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 1.5em;
+    color: #fff;
+    z-index: 2;
+    /* text-shadow: 0 0 1px rgba(0,0,0,.5); */
+}
+.Home--othersHistories--item-foot p{
+    margin-top: 8px;
+    font-size: 1rem;
+    text-shadow: none;
+}
+
+/* All Histories */
+.Histories--all{
+    margin-top: 90px;
+    position: relative;
+    --marge: 25px;
+    margin-bottom: 100px;
+}
+.Histories--all ._wrapper_{
+    padding-top: 100px;
+    border-top: 2px solid #222;
+}
+.Histories--all::before{
+    content: "";
+    width: 1px;
+    height: calc(100% - (var(--marge) * 4));
+    background-color: rgba(0, 0, 0, .05);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(1 * (var(--marge) * 4));
+    z-index: 2;
+}
+.Histories--all ._cercle_{
+    --size: 62px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background-color: #222;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%,-50%) scale(.95);
+    box-shadow: 0 0 0 10px #fff;
+}
+.Histories--all ._cercle_::after{
+    content: "";
+    --size: 16px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 2px;
+    color: rgb(246, 29, 108);
+    background-color: currentColor;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    --space: 4px;
+    transform: translate(calc(-100% - (var(--space)/2)),calc(-100% - (var(--space)/2)));
+}
+.Histories--all ._cercle_::after{
+    box-shadow: calc(var(--size) + 4px) 0 0 currentColor,
+        0 calc(var(--size) + 4px) 0 0 currentColor,
+        calc(var(--size) + 4px) calc(var(--size) + 4px) 0 0 currentColor;
+}
+.Histories--all--item_img{
+    display: flex;
+    border-radius: 12px;
+    background-color: #FAFAFA;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+}
+.Histories--all--item{
+    background-color: #fff;
+    display: flex;
+    margin-bottom: 40px;
+}
+.Histories--all--item:last-child{
+    margin-bottom: 0;
+}
+.Histories--all--item::before{
+    display: none;
+}
+.Histories--all--item_img{
+    background-color: transparent;
+    width: calc(50% - var(--marge));
+    margin-right: var(--marge);
+}
+
+.Histories--all--item_img >div{
+    width: 100%;
+    display: flex;
+    aspect-ratio: 1/.65;
+    background-color: #EFEFEF;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    color: rgba(0, 0, 0, .2);
+    font-weight: bold;
+}
+.Histories--all--item::before{
+    display: none;
+}
+.Histories--all--item_desc{
+    width: calc(50% - var(--marge));
+    margin-left: var(--marge);
+    display: flex;
+    align-items: center;
+}
+.Histories--all--item_desc p{
+    line-height: 1.5em;
+    font-size: 1.2em;
+    color: #555;
+}
+.Histories--all--item_desc h3{
+    font-size: 3.5em;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    position: relative;
+    width: 80%;
+}
+.Histories--all--item_desc h3::before{
+    content: "";
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transform: translateY(-50%);
+    display: block;
+}
